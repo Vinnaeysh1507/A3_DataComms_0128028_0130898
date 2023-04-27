@@ -7,26 +7,27 @@ using TMPro;
 public class MyNetworkPlayer : NetworkBehaviour
 {
     [SerializeField] private TMP_Text displayNameText = null;
-    [SerializeField] private Renderer displayColorRenderer = null;
+    //[SerializeField] private Renderer displayColorRenderer = null;
 
     [SyncVar(hook = nameof(HandleDisplayNameUpdate))]
     [SerializeField] private string displayName = "Missing Name";
 
-    [SyncVar(hook = nameof(HandleDisplayColourUpdate))]
-    [SerializeField] private Color displayColor = Color.black;
+    //[SyncVar(hook = nameof(HandleDisplayColourUpdate))]
+    //[SerializeField] private Color displayColor = Color.black;
 
     //-------------------server------------------------
+    
     [Server]
     public void setDisplayName(string newDisplayName)
     {
         displayName = newDisplayName;
     }
 
-    [Server]
-    public void setDisplayColor(Color newDisplayColor)
-    {
-        displayColor = newDisplayColor;
-    }
+    //[Server]
+    //public void setDisplayColor(Color newDisplayColor)
+    //{
+    //    displayColor = newDisplayColor;
+    //}
 
     [Command]
     private void CmdSetDisplayName(string newDisplayName)
@@ -38,13 +39,15 @@ public class MyNetworkPlayer : NetworkBehaviour
         RpcDisplayNewName(newDisplayName);
         setDisplayName(newDisplayName);
     }
+
     //------------------------------------------------
 
     //------------------------client------------------
-    private void HandleDisplayColourUpdate(Color oldColor, Color newColor)
-    {
-        displayColorRenderer.material.SetColor("_BaseColor", newColor);
-    }
+    
+    //private void HandleDisplayColourUpdate(Color oldColor, Color newColor)
+    //{
+    //    displayColorRenderer.material.SetColor("_BaseColor", newColor);
+    //}
 
     private void HandleDisplayNameUpdate(string oldName, string newName)
     {
@@ -62,5 +65,6 @@ public class MyNetworkPlayer : NetworkBehaviour
     {
         Debug.Log(newDisplayName);
     }
+
     //------------------------------------------------
 }

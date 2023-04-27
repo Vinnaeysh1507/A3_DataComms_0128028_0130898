@@ -22,17 +22,17 @@ public class MyNetworkManager : NetworkManager
 
         Color displayColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
         
-        if(numPlayers == 1)
-        {
-            player.setDisplayColor(Color.blue);
-        }
-        else if(numPlayers == 2)
-        {
-            player.setDisplayColor(Color.red);
-        }
-        else
-        {
-            player.setDisplayColor(displayColor);
-        }
+        //if(numPlayers == 1)
+        //{
+        //    player.setDisplayColor(Color.blue);
+        //}
+        //else if(numPlayers == 2)
+        //{
+        //    player.setDisplayColor(Color.red);
+        //}
+        //else
+        //{
+        //    player.setDisplayColor(displayColor);
+        //}
     }
 }
