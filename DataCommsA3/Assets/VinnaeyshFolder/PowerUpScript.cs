@@ -4,24 +4,59 @@ using UnityEngine;
 
 public class PowerUpScript : MonoBehaviour
 {
-    [SerializeField] private int LiveTimer;
+    [SerializeField] private float LiveTimer;
+    [SerializeField] private float LiveTimer2 = 5.0f;
+
+
+    [SerializeField] private GameObject PowerUpPoint1;
+    [SerializeField] private GameObject PowerUpPoint2;
+    [SerializeField] private GameObject PowerUpPoint3;
+    [SerializeField] private GameObject PowerUpPoint4;
+    [SerializeField] private GameObject PowerUpPoint5;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        transform.position = PowerUpPoint1.transform.position;
+        StartCoroutine(ChangePos());
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        StartCoroutine(ChangePos());
+        if (LiveTimer2 <= 0.0f)
+        {
+            LiveTimer2 = 5.0f;
+            
+        }
+        else
+        {
+            LiveTimer2 -= Time.deltaTime;
+        }
+        
     }
 
     public IEnumerator ChangePos()
     { 
         yield return new WaitForSeconds(LiveTimer);
 
-        Destroy(this);
+        transform.position = PowerUpPoint2.transform.position;
+
+        yield return new WaitForSeconds(LiveTimer);
+
+        transform.position = PowerUpPoint3.transform.position;
+
+        yield return new WaitForSeconds(LiveTimer);
+
+        transform.position = PowerUpPoint4.transform.position;
+
+        yield return new WaitForSeconds(LiveTimer);
+
+        transform.position = PowerUpPoint5.transform.position;
+
+        yield return new WaitForSeconds(LiveTimer);
+
+        transform.position = PowerUpPoint1.transform.position;
+
+
     }
 }
