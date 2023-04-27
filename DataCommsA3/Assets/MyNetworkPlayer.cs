@@ -7,10 +7,12 @@ using TMPro;
 public class MyNetworkPlayer : NetworkBehaviour
 {
     [SerializeField] private TMP_Text displayNameText = null;
+    private Transform spawnPoint;
     //[SerializeField] private Renderer displayColorRenderer = null;
 
     [SyncVar(hook = nameof(HandleDisplayNameUpdate))]
     [SerializeField] private string displayName = "Missing Name";
+    private Transform displaySpawnPoint = null;
 
     //[SyncVar(hook = nameof(HandleDisplayColourUpdate))]
     //[SerializeField] private Color displayColor = Color.black;
@@ -22,6 +24,13 @@ public class MyNetworkPlayer : NetworkBehaviour
     {
         displayName = newDisplayName;
     }
+
+    [Server]
+    public void setSpawnPoint(Transform newSpawnPoint)
+    {
+        displaySpawnPoint = newSpawnPoint;
+    }
+
 
     //[Server]
     //public void setDisplayColor(Color newDisplayColor)

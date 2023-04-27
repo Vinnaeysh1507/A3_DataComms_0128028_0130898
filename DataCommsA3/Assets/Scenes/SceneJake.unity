@@ -9035,14 +9035,14 @@ MonoBehaviour:
   spawnPrefabs: []
   timeInterpolationGui: 0
   spawnPoint:
-  - {fileID: 941835124}
-  - {fileID: 244508723}
-  - {fileID: 1745099333}
-  - {fileID: 1146386055}
-  - {fileID: 1642786232}
-  - {fileID: 416274409}
-  - {fileID: 2084182224}
-  - {fileID: 2122021902}
+  - {fileID: 941835125}
+  - {fileID: 244508724}
+  - {fileID: 1745099334}
+  - {fileID: 1146386056}
+  - {fileID: 1642786233}
+  - {fileID: 416274410}
+  - {fileID: 2084182225}
+  - {fileID: 2122021903}
 --- !u!114 &2064111003
 MonoBehaviour:
   m_ObjectHideFlags: 0
