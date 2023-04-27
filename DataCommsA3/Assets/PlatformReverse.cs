@@ -5,17 +5,44 @@ using Mirror;
 
 public class PlatformReverse : NetworkBehaviour
 {
-    [SyncVar(hook = nameof(SetPlayerSpeed))]
-    [SerializeField] float pushBackForce = 0.0f;
+    [SerializeField] private float pushBackForce = 0.0f;
+    [SerializeField] private Transform playerTransform;
+    private bool canPush = false;
 
-    public override void OnStartServer()
+    private void OnTriggerEnter(Collider other)
     {
-        base.OnStartServer();
-        pushBackForce = 5.0f;
+        if (!hasAuthority)
+        {
+            return; 
+        }
+
+        
+        if(!canPush)
+        {
+            canPush = true;
+        }
     }
 
-    private void SetPlayerSpeed(float oldSpeed, float newSpeed)
+    private void OnTriggerExit(Collider other)
     {
-           
+        if (canPush)
+        {
+            canPush = false;
+        }
     }
+
+    private void Update()
+    {
+        if(canPush)
+        {
+            pushBackPlayer();
+        }
+    }
+
+    private void pushBackPlayer()
+    {
+        playerTransform.Translate(new Vector3(0, 0, -pushBackForce*0.01f));
+        Debug.Log("Ground Touched!!!");
+    }
+
 }
