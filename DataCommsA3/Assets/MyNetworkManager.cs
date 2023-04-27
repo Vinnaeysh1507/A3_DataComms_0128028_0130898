@@ -10,11 +10,11 @@ public class MyNetworkManager : NetworkManager
     [SerializeField] public int MaxPlayer;
     [SerializeField] private string ExceedLimitScene;
 
-    public override void OnClientConnect()
+/*    public override void OnClientConnect()
     {
         base.OnClientConnect();
         Debug.Log("I connected to the server");
-    }
+    }*/
 
 
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
