@@ -7,7 +7,7 @@ using TMPro;
 public class MyNetworkPlayer : NetworkBehaviour
 {
     [SerializeField] private TMP_Text displayNameText = null;
-    private Transform spawnPoint;
+    [SerializeField] private Transform playerTransform;
     //[SerializeField] private Renderer displayColorRenderer = null;
 
     [SyncVar(hook = nameof(HandleDisplayNameUpdate))]
@@ -25,10 +25,10 @@ public class MyNetworkPlayer : NetworkBehaviour
         displayName = newDisplayName;
     }
 
-    [Server]
-    public void setSpawnPoint(Transform newSpawnPoint)
+    [ClientRpc]
+    public void RpcSetSpawnPoint(Vector3 newSpawnPoint)
     {
-        displaySpawnPoint = newSpawnPoint;
+        playerTransform.position = newSpawnPoint;
     }
 
 

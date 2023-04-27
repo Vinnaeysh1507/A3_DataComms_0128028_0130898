@@ -24,35 +24,35 @@ public class MyNetworkManager : NetworkManager
 
         if (numPlayers == 1)
         {
-            player.setSpawnPoint(spawnPoint[0]);
+            player.RpcSetSpawnPoint(spawnPoint[0].position);
         }
         else if (numPlayers == 2)
         {
-            player.setSpawnPoint(spawnPoint[1]);
+            player.RpcSetSpawnPoint(spawnPoint[1].position);
         }
         else if (numPlayers == 3)
         {
-            player.setSpawnPoint(spawnPoint[2]);
+            player.RpcSetSpawnPoint(spawnPoint[2].position);
         }
         else if (numPlayers == 4)
         {
-            player.setSpawnPoint(spawnPoint[3]);
+            player.RpcSetSpawnPoint(spawnPoint[3].position);
         }
         else if (numPlayers == 5)
         {
-            player.setSpawnPoint(spawnPoint[4]);
+            player.RpcSetSpawnPoint(spawnPoint[4].position);
         }
         else if (numPlayers == 6)
         {
-            player.setSpawnPoint(spawnPoint[5]);
+            player.RpcSetSpawnPoint(spawnPoint[5].position);
         }
         else if (numPlayers == 7)
         {
-            player.setSpawnPoint(spawnPoint[6]);
+            player.RpcSetSpawnPoint(spawnPoint[6].position);
         }
         else if (numPlayers == 8)
         {
-            player.setSpawnPoint(spawnPoint[7]);
+            player.RpcSetSpawnPoint(spawnPoint[7].position);
         }
 
         //else

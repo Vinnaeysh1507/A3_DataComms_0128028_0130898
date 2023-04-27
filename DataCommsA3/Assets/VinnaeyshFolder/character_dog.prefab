@@ -377,6 +377,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   displayNameText: {fileID: 3237702762340534082}
+  playerTransform: {fileID: 2420997304362674343}
   displayName: Missing Name
 --- !u!1 &4226675711994138100
 GameObject:
