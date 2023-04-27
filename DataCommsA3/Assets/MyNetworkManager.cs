@@ -5,6 +5,8 @@ using Mirror;
 
 public class MyNetworkManager : NetworkManager
 {
+    [SerializeField] private GameObject[] spawnPoint = new GameObject[8];
+
     public override void OnClientConnect()
     {
         base.OnClientConnect();
