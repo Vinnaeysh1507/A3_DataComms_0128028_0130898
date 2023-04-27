@@ -291,6 +291,7 @@ MonoBehaviour:
   syncInterval: 0.1
   movement: {x: 0, y: 0, z: 1}
   speed: 5
+  RotSpeed: 720
 --- !u!114 &-4135233226826951893
 MonoBehaviour:
   m_ObjectHideFlags: 0

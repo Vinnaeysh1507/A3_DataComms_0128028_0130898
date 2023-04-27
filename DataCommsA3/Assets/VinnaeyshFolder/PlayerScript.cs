@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
-using UnityEditor.Experimental.GraphView;
 
 public class PlayerScript : NetworkBehaviour
 {
@@ -11,6 +10,7 @@ public class PlayerScript : NetworkBehaviour
     private float InputX;
     private float InputY;
     [SerializeField] private float speed;
+    [SerializeField] private float RotSpeed;
 
     [Client]
     private void Update()
@@ -18,6 +18,11 @@ public class PlayerScript : NetworkBehaviour
         if (!hasAuthority)
         { return; }
 
+        PlayerMovement();
+    }
+
+    private void PlayerMovement()
+    {
         InputX = Input.GetAxisRaw("Horizontal");
         InputY = Input.GetAxisRaw("Vertical");
 
