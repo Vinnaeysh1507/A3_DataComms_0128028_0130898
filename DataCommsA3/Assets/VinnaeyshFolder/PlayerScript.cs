@@ -40,7 +40,7 @@ public class PlayerScript : NetworkBehaviour
             PlayerJump();   
         }
          
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+       
 
         
     }

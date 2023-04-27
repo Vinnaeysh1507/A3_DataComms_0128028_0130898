@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/YTTutorial/Lobby Tutorial/Lobby_Main_menu.unity
     guid: f8d7b62c966868549a27188973c9a475
+  - enabled: 0
+    path: Assets/Scenes/SceneJake.unity
+    guid: 50c995273c943c6409c63e0bc21096e8
   m_configObjects: {}

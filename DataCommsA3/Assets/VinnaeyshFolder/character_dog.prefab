@@ -295,6 +295,12 @@ MonoBehaviour:
   movement: {x: 0, y: 0, z: 1}
   speed: 5
   RotSpeed: 720
+  JumpForce: 10
+  playerHeight: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  isGrounded: 0
 --- !u!114 &-4135233226826951893
 MonoBehaviour:
   m_ObjectHideFlags: 0
