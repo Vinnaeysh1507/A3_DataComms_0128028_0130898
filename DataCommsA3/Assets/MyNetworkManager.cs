@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Mirror;
 
 public class MyNetworkManager : NetworkManager
 {
     [SerializeField] private Transform[] spawnPoint = new Transform[8];
+    [SerializeField] public int MaxPlayer;
+    [SerializeField] private string ExceedLimitScene;
 
     public override void OnClientConnect()
     {
         base.OnClientConnect();
         Debug.Log("I connected to the server");
     }
+
 
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
@@ -53,6 +57,10 @@ public class MyNetworkManager : NetworkManager
         else if (numPlayers == 8)
         {
             player.RpcSetSpawnPoint(spawnPoint[7].position);
+        }
+        else if (numPlayers  >8 )
+        {
+            SceneManager.LoadScene(ExceedLimitScene);
         }
 
         //else

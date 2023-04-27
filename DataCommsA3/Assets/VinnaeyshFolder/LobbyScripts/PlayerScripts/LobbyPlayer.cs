@@ -44,6 +44,7 @@ public class LobbyPlayer : NetworkBehaviour
         { 
             PlayerLobbyUI.SetActive(true);
         }
+
     }
 
     [Command]
