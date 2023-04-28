@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 4683354352754461064}
   - component: {fileID: 378426131952719704}
   - component: {fileID: 143727482}
+  - component: {fileID: 759630519897676746}
   m_Layer: 0
   m_Name: character_dog
   m_TagString: Player
@@ -417,6 +418,22 @@ MonoBehaviour:
   chatUI: {fileID: 8950994231820560229}
   chatText: {fileID: 8950994231826729778}
   inputField: {fileID: 8950994230999306105}
+--- !u!114 &759630519897676746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3085753631568785949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64004608a46718545a4008996245cd6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0.1
+  overTimeScene: TimedOutScene
 --- !u!1 &4226675711994138100
 GameObject:
   m_ObjectHideFlags: 0

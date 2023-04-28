@@ -42,7 +42,6 @@ public class PlatformReverse : NetworkBehaviour
     private void pushBackPlayer()
     {
         playerTransform.Translate(new Vector3(0, 0, -pushBackForce*0.01f));
-        Debug.Log("Ground Touched!!!");
     }
 
 }

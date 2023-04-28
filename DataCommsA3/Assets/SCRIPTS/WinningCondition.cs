@@ -5,12 +5,18 @@ using Mirror;
 
 public class WinningCondition : NetworkBehaviour
 {
-    [SerializeField] private BoxCollider winningPoint;
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform finishPoint;
+    private float distToPoint;
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        Debug.Log("Win condition achieved");
+        //distToPoint = Vector3.Distance(finishPoint.position, player.position);
+        //distToPoint = (finishPoint.position - player.position).sqrMagnitude;
+        if (distToPoint <= 5.0f)
+        {
+            
+            Debug.Log("game won!");
+        }
     }
-
-
 }

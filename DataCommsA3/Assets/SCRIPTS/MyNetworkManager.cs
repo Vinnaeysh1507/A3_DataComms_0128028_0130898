@@ -9,22 +9,16 @@ public class MyNetworkManager : NetworkManager
     [SerializeField] private Transform[] spawnPoint = new Transform[8];
     [SerializeField] public int MaxPlayer;
     [SerializeField] private string ExceedLimitScene;
-
-/*    public override void OnClientConnect()
-    {
-        base.OnClientConnect();
-        Debug.Log("I connected to the server");
-    }*/
-
+    [SerializeField] private WinningCondition winCon;
 
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
         base.OnServerAddPlayer(conn);
         MyNetworkPlayer player = conn.identity.GetComponent<MyNetworkPlayer>();
-
+        
         player.setDisplayName($"Player {numPlayers}");
 
-        Color displayColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+        
 
         if (numPlayers == 1)
         {
@@ -63,9 +57,6 @@ public class MyNetworkManager : NetworkManager
             SceneManager.LoadScene(ExceedLimitScene);
         }
 
-        //else
-        //{
-        //    player.setDisplayColor(displayColor);
-        //}
+
     }
 }
