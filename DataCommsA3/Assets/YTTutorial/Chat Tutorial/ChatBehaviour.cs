@@ -60,6 +60,7 @@ public class ChatBehaviour : NetworkBehaviour
     [Command]
     private void CmdSendMessage(string message)
     { 
+        //Validate messages here
         RpcHandleMessage($"[{connectionToClient.connectionId}]: {message}");
     }
 
